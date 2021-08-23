@@ -263,13 +263,16 @@ img {
 	color: var(--first-color-alt);
 }
 
-.home__blob {
-	width: 200px;
+.blop {
 	fill: var(--second-color);
 }
 
+.home__blob {
+	width: 350px;
+}
+
 .home__blob-img {
-	width: 170px;
+	width: 120px;
 }
 
 .home__data {
@@ -343,4 +346,58 @@ img {
 .button--flex {
 	display: inline-flex;
 	align-items: center;
+}
+
+/*=== ABOUT ===*/
+.about__blop {
+	width: 200px;
+	justify-self: center;
+	align-self: center;
+}
+
+.about__blop:hover {
+	animation: scale-up-bottom 1s ease-in 5ms;
+}
+
+@keyframes scale-up-bottom {
+	0% {
+		transform: scale(0.5);
+		transform-origin: 50% 100%;
+	}
+	100% {
+		transform: scale(1);
+		transform-origin: 50% 100%;
+	}
+}
+
+.about__description {
+	text-align: center;
+	margin-bottom: var(--mb-2-5);
+}
+
+.about__info {
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title {
+	font-size: var(--h2-font-size);
+	font-weight: var(--font-semi-bold);
+	color: var(--stress-color);
+}
+
+.about__info-name {
+	font-size: var(--smaller-font-size);
+}
+
+.about__info-title,
+.about__info-name {
+	display: block;
+	text-align: center;
+}
+
+.about__buttons {
+	display: flex;
+	justify-content: center;
 }
