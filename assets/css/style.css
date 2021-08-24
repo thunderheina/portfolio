@@ -25,6 +25,7 @@
 	--body-color: hsl(var(--hue-color), 60%, 99%);
 	--second-color: hsl(34, 100%, 71%);
 	--stress-color: hsl(174, 62%, 47%);
+	--stress-color-light: hsl(176, 62%, 87%);
 	--container-color: #fff;
 
 	/* FONTS */
@@ -115,6 +116,7 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
 /* BEM CSS */
 .section {
 	padding: 2rem 0 4rem;
@@ -154,6 +156,7 @@ img {
 	z-index: var(--z-fixed);
 	background-color: var(--body-color);
 }
+
 /* NAV */
 .nav {
 	max-width: 968px;
@@ -348,7 +351,7 @@ img {
 	align-items: center;
 }
 
-/*=== ABOUT ===*/
+/* ==== ABOUT ==== */
 .about__blop {
 	width: 200px;
 	justify-self: center;
@@ -400,4 +403,101 @@ img {
 .about__buttons {
 	display: flex;
 	justify-content: center;
+}
+
+/* ==== SKILLS ====*/
+.skills__container {
+	row-gap: 0;
+}
+
+.skills__header {
+	display: flex;
+	align-items: center;
+	margin-bottom: var(--mb-2-5);
+	cursor: pointer;
+}
+
+.skills__icon,
+.skills__arrow {
+	font-size: 2rem;
+	color: var(--first-color);
+}
+
+.skills__icon {
+	margin-right: var(--mb-0-75);
+}
+
+.skills__title {
+	font-size: var(--h3-font-size);
+}
+
+.skills__subtitle {
+	font-size: var(--small-font-size);
+	color: var(--text-color-light);
+}
+
+.skills__arrow {
+	margin-left: auto;
+	transition: 0.4s;
+}
+
+.skills__list {
+	row-gap: 1.5rem;
+	padding-left: 2.7rem;
+}
+
+.skills__titles {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: var(--mb-0-5);
+}
+
+.skills__name {
+	font-size: var(--normal-font-size);
+	font-weight: var(--font-medium);
+}
+
+.skills__bar,
+.skills__percentage {
+	height: 5px;
+	border-radius: 0.25rem;
+}
+
+.skills__bar {
+	background-color: var(--first-color-lighter);
+}
+
+.skills__percentage {
+	display: block;
+	background-color: var(--first-color-alt);
+}
+
+.skills__html {
+	width: 80%;
+}
+
+.skills__css {
+	width: 70%;
+}
+
+.skills__js {
+	width: 50%;
+}
+
+.skills__react {
+	width: 60%;
+}
+
+.skills__close .skills__list {
+	height: 0;
+	overflow: hidden;
+}
+
+.skills__open .skills__list {
+	height: max-content;
+	margin-bottom: var(--mb-2-5);
+}
+
+.skills__open .skills__arrow {
+	transform: rotate(-180deg);
 }
