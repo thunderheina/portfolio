@@ -1,5 +1,6 @@
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 /* VARIABLES CSS */
 :root {
 	--header-height: 3rem;
@@ -18,6 +19,7 @@
 	--first-color-second: hsl(var(--hue-color), 73%, 63%);
 	--first-color-alt: hsl(var(--hue-color), 85%, 71%);
 	--first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+	--first-color-light: hsl(var(--hue-color), 92%, 90%);
 	--title-color: hsl(var(--hue-color), 8%, 15%);
 	--text-color: hsl(var(--hue-color), 8%, 45%);
 	--text-color-light: hsl(var(--hue-color), 8%, 65%);
@@ -428,7 +430,7 @@ img {
 .skills__header {
 	display: flex;
 	align-items: center;
-	margin-bottom: var(--mb-2-5);
+	margin-bottom: var(--mb-2);
 	cursor: pointer;
 }
 
@@ -451,70 +453,94 @@ img {
 	color: var(--text-color-light);
 }
 
-.skills__arrow {
-	margin-left: auto;
-	transition: 0.4s;
+/* ==== SKILLS ACCORDION ==== */
+.accordion {
+	display: grid;
+	align-content: center;
 }
 
-.skills__list {
-	row-gap: 1.5rem;
-	padding-left: 2.7rem;
+.accordion__container {
+	display: grid;
+	row-gap: 0.75rem;
+	padding: 2rem 1rem;
+	border-color: var(--body-color);
+	border-radius: 0.5rem;
 }
 
-.skills__titles {
+.accordion__title {
+	font-size: var(--small-font-size);
+	color: var(--title-color);
+	font-weight: 400;
+	margin-top: 0.15rem;
+	transition: 0.2s;
+}
+
+.accordion__header {
 	display: flex;
-	justify-content: space-between;
-	margin-bottom: var(--mb-0-5);
+	column-gap: 0.5rem;
+	padding: 1.25rem 1.25rem 1.25rem 1rem;
+	cursor: pointer;
 }
 
-.skills__name {
-	font-size: var(--normal-font-size);
-	font-weight: var(--font-medium);
+.accordion__description {
+	padding: 0 1.25rem 1.25rem 2.5rem;
 }
 
-.skills__bar,
-.skills__percentage {
-	height: 5px;
-	border-radius: 0.25rem;
+.accordion__description--item {
+	padding-bottom: 0.25rem;
+	font-size: var(--smaller-font-size);
 }
 
-.skills__bar {
-	background-color: var(--first-color-lighter);
-}
-
-.skills__percentage {
-	display: block;
-	background-color: var(--first-color-alt);
-}
-
-.skills__html {
-	width: 80%;
-}
-
-.skills__css {
-	width: 70%;
-}
-
-.skills__js {
-	width: 50%;
-}
-
-.skills__react {
-	width: 60%;
-}
-
-.skills__close .skills__list {
-	height: 0;
-	overflow: hidden;
-}
-
-.skills__open .skills__list {
+.accordion__icon {
+	font-size: 1rem;
 	height: max-content;
-	margin-bottom: var(--mb-2-5);
+	color: var(--title-color);
+	transition: 0.3s;
 }
 
-.skills__open .skills__arrow {
-	transform: rotate(-180deg);
+.accordion__item {
+	box-shadow: 0 2px 6px hsla(0, 0%, 15%, 0.1);
+	background-color: var(--body-color);
+	border-radius: 0.25rem;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+.accordion__item::after {
+	content: "";
+	background-color: var(--first-color-alt);
+	width: 5px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.accordion__item:nth-child(odd) {
+	background-color: var(--first-color-light);
+}
+
+.accordion__item:nth-child(even) {
+	background-color: var(--stress-color-light);
+}
+
+.accordion__item:nth-child(even)::after {
+	background-color: var(--stress-color);
+}
+
+.accordion__content {
+	overflow: hidden;
+	height: 0;
+	transition: all 0.25s ease;
+}
+
+.accordion-open .accordion__icon {
+	transform: rotate(45deg);
+}
+
+.accordion-open .accordion__title {
+	font-weight: 600;
 }
 
 /* ==== SERVICES ==== */
@@ -686,4 +712,33 @@ img {
 .swiper-button-next,
 .swiper-pagination-bullet {
 	outline: none;
+}
+
+/* ==== MEDIA QUERIES ==== */
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+	.accordion__container {
+		width: 550px;
+		padding: 2.5rem;
+		justify-self: center;
+		border-radius: 0.75rem;
+	}
+	.accordion__header {
+		padding: 1.5rem;
+	}
+	.accordion__title {
+		padding-right: 3.5rem;
+	}
+	.accordion__description {
+		padding: 0 4rem 1.25rem 3.5rem;
+	}
+}
+
+/* For large devices */
+@media screen and (min-width: 968px) {
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }

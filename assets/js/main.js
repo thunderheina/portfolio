@@ -27,25 +27,35 @@ function linkAction() {
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-
 /* === ACCORDION SKILLS === */
-const skillsContent = document.getElementsByClassName('skills__content'),
-	skillsHeader = document.querySelectorAll('.skills__header');
+const accordionItems = document.querySelectorAll('.accordion__item');
 
-function toggleSkills() {
-	let itemClass = this.parentNode.className;
+accordionItems.forEach((item) => {
+	const accordionHeader = item.querySelector('.accordion__header')
 
-	for (let i = 0; i < skillsContent.length; i++) {
-		skillsContent[i].className = 'skills__content skills__close'
-	}
-	if (itemClass === 'skills__content skills__close') {
-		this.parentNode.className = 'skills__content skills__open'
+	accordionHeader.addEventListener('click', () => {
+		const openItem = document.querySelector('.accordion-open')
+
+		toggleItem(item)
+
+		if (openItem && openItem !== item) {
+			toggleItem(openItem)
+		}
+	})
+})
+
+const toggleItem = (item) => {
+	const accordionContent = item.querySelector('.accordion__content')
+
+	if (item.classList.contains('accordion-open')) {
+		accordionContent.removeAttribute('style')
+		item.classList.remove('accordion-open')
+	} else {
+		accordionContent.style.height = accordionContent.scrollHeight + 'px'
+		item.classList.add('accordion-open')
 	}
 }
 
-skillsHeader.forEach((el) => {
-	el.addEventListener('click', toggleSkills)
-})
 
 /* === SERVICES MODAL === */
 const modalViews = document.querySelectorAll('.services__modal'),
