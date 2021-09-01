@@ -119,6 +119,11 @@ img {
 	height: auto;
 }
 
+textarea {
+	resize: none;
+	overflow: auto;
+}
+
 /* BEM CSS */
 .section {
 	padding: 2rem 0 4rem;
@@ -714,6 +719,64 @@ img {
 	outline: none;
 }
 
+/* ==== CONTACT ME ==== */
+.contact__container {
+	row-gap: 3rem;
+}
+
+.contact__information {
+	display: flex;
+	margin-bottom: var(--mb-2);
+}
+
+.contact__icon {
+	font-size: 2rem;
+	color: var(--first-color);
+	margin-right: var(--mb-0-75);
+}
+
+.contact__title {
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-medium);
+}
+
+.contact__subtitle {
+	font-size: var(--small-font-size);
+	color: var(--text-color);
+}
+
+.messenger__text {
+	display: flex;
+	column-gap: 0.5rem;
+	margin-top: var(--mb-0-25);
+}
+
+.messenger__url {
+	color: var(--text-color);
+}
+
+.contact__content {
+	background-color: var(--input-color);
+	border-radius: 0.5rem;
+	padding: 0.75rem 1rem 0.25rem;
+}
+
+.contact__label {
+	font-size: var(--smaller-font-size);
+	color: var(--title-color);
+}
+
+.contact__input {
+	width: 100%;
+	background-color: var(--input-color);
+	color: var(--text-color);
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+	border: none;
+	outline: none;
+	padding: 0.25rem 0.5rem 0.5rem 0;
+}
+
 /* ==== MEDIA QUERIES ==== */
 
 /* For medium devices */
@@ -723,6 +786,7 @@ img {
 		padding: 2.5rem;
 		justify-self: center;
 		border-radius: 0.75rem;
+		width: 100%;
 	}
 	.accordion__header {
 		padding: 1.5rem;
@@ -740,5 +804,11 @@ img {
 	.container {
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.accordion__container {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
 	}
 }
