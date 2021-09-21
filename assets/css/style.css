@@ -901,7 +901,7 @@ textarea {
 
 /* ==== MEDIA QUERIES ==== */
 /* For small devices */
-@media screen and (max-width: 350px) {
+@media screen and (min-width: 280px) {
 	.container {
 		margin-left: var(--mb-1);
 		margin-right: var(--mb-1);
@@ -957,11 +957,9 @@ textarea {
 	}
 
 	.accordion__container {
-		width: 550px;
 		padding: 2.5rem;
 		justify-self: center;
 		border-radius: 0.75rem;
-		width: 100%;
 	}
 	.accordion__header {
 		padding: 1.5rem;
