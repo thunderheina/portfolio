@@ -1018,6 +1018,7 @@ textarea {
 	}
 	.nav__menu {
 		margin-left: auto;
+		padding: initial;
 	}
 	.change-theme {
 		margin: 0;
