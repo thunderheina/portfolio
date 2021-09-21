@@ -317,7 +317,7 @@ textarea {
 }
 
 .home__blob {
-	width: 350px;
+	width: 200px;
 }
 
 .home__blob-img {
@@ -918,7 +918,7 @@ textarea {
 		grid-template-columns: 0.25fr 3fr;
 	}
 	.home__blob {
-		width: 180px;
+		width: 200px;
 	}
 
 	.accordion__container {
@@ -944,6 +944,9 @@ textarea {
 	}
 	.home__data {
 		grid-column: initial;
+	}
+	.home__blob {
+		width: 250px;
 	}
 	.home__img {
 		order: 1;
