@@ -1,17 +1,9 @@
 /* GOOGLE FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap");
 
 /* VARIABLES CSS */
 :root {
 	--header-height: 3rem;
-
-	/* C0LORS */
-	/* palette 
-	Orange Peel - #FF9F1C - 35, 100, 55
-	Mellow Apricot - #FFBF69 - 34, 100, 71
-	Light Cyan - #CBF3F0 - 176, 62, 87
-	Tiffany Blue - #2EC4B6 - 174, 62, 47
-	*/
 	--hue-color: 36;
 
 	/* HSL color mode */
@@ -33,7 +25,7 @@
 	--scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
 	/* FONTS */
-	--body-font: "Poppins", sans-serif;
+	--body-font: "Nunito", sans-serif;
 
 	/* .5rem = 8px, 1rem = 16px */
 	--big-font-size: 2rem;
@@ -949,6 +941,7 @@ textarea {
 		width: 250px;
 	}
 	.home__img {
+		width: 250px;
 		order: 1;
 		justify-self: center;
 	}
