@@ -829,6 +829,10 @@ textarea {
 	.skills__modal {
 		padding: 0 0.5rem;
 	}
+
+	.services__card-description {
+		font-size: var(--smaller-font-size);
+	}
 }
 
 /* For medium devices */
