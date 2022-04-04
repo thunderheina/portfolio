@@ -21,46 +21,15 @@ if (navClose) {
 const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction() {
-	/* мб, убрать константу, тк она уже объявлена? */
 	const navMenu = document.getElementById('nav-menu');
 	navMenu.classList.remove('show-menu');
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-/* === ACCORDION SKILLS === */
-const accordionItems = document.querySelectorAll('.accordion__item');
-
-accordionItems.forEach((item) => {
-	const accordionHeader = item.querySelector('.accordion__header')
-
-	accordionHeader.addEventListener('click', () => {
-		const openItem = document.querySelector('.accordion-open')
-
-		toggleItem(item)
-
-		if (openItem && openItem !== item) {
-			toggleItem(openItem)
-		}
-	})
-})
-
-const toggleItem = (item) => {
-	const accordionContent = item.querySelector('.accordion__content')
-
-	if (item.classList.contains('accordion-open')) {
-		accordionContent.removeAttribute('style')
-		item.classList.remove('accordion-open')
-	} else {
-		accordionContent.style.height = accordionContent.scrollHeight + 'px'
-		item.classList.add('accordion-open')
-	}
-}
-
-
 /* === SERVICES MODAL === */
-const modalViews = document.querySelectorAll('.services__modal'),
-	modalBtns = document.querySelectorAll('.services__button'),
-	modalClose = document.querySelectorAll('.services__modal-close');
+const modalViews = document.querySelectorAll('.skills__modal'),
+	modalBtns = document.querySelectorAll('.skills__button'),
+	modalClose = document.querySelectorAll('.skills__modal-close');
 
 let modal = function (modalClick) {
 	modalViews[modalClick].classList.add('active-modal')
